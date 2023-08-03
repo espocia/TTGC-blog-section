@@ -1,0 +1,308 @@
+@import url("reset.css");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Raleway:wght@300;700&family=Roboto:wght@300;400;700&display=swap");
+
+:root {
+  --clr-purple: rgba(0, 4, 25, 0.5);
+  --clr-dark-purple: #060616;
+
+  --clr-gold-gradient: linear-gradient(323deg, #c8af6f 0%, #fff 100%);
+
+  --clr-white: #ffffff;
+  --clr-tranparent-white: rgba(255, 255, 255, 0.81);
+  --clr-tranparent-purple: rgba(255, 255, 255, 0.46);
+
+  --sans-serif: "Raleway", sans-serif;
+  --font-light: 300;
+  --font-bold: 700;
+
+  --filer-blur: filter: blur(272.5px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--sans-serif);
+  background-image: url("../assets/img/banner-bg.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--clr-purple);
+  color: var(--clr-tranparent-white);
+  font-weight: var(--font-bold);
+  padding: 1em 3em;
+  font-size: 1.5rem;
+}
+
+.hero {
+  display: flex;
+  padding: 0px 5em;
+  justify-content: space-around;
+  align-items: center;
+}
+.hero::before {
+  position: relative;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/img/3D\ Glass\ Logo\ 1.png");
+  background-size: cover;
+  opacity: 0.2; /* Adjust the opacity value (0 to 1) to control transparency */
+  z-index: -1; /* Push the pseudo-element behind the content */
+  width: 60%;
+}
+
+.hero::after {
+  content: "hello";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 526px;
+  background: #874383;
+  filter: blur(1000.5px);
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.header,
+.floating-island {
+  width: 50%;
+  background: none;
+}
+
+.header h1 {
+  margin-top: 0.2em;
+  font-size: 5rem;
+  font-weight: var(--font-bold);
+  background: linear-gradient(323deg, #c8af6f 100%, #fff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 4px 5px 7px rgba(0, 0, 0, 0.39);
+}
+
+.header p {
+  font-weight: var(--font-bold);
+  color: white;
+  font-size: 1.2rem;
+}
+
+.floating-island {
+  position: relative;
+  max-height: 500px;
+}
+.floating-img {
+  width: 100%;
+  opacity: 0;
+}
+
+.floating-img-0 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  animation-name: float;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  25% {
+    transform: translate3d(20px, 20px, 0);
+    animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+  }
+  50% {
+    transform: translate3d(0, 0, 0);
+  }
+  75% {
+    transform: translate3d(30px, -10px, 0);
+    animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.blogs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 5em;
+}
+
+.blogs-row {
+  width: 100%;
+}
+.blog-item {
+  margin: 20px;
+  padding: 10px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.46);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  position: relative; /* Add this line to set position to relative */
+  overflow: hidden;
+}
+
+.card-body {
+  color: white;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: -100%;
+  position: absolute;
+  /* From https://css.glass */
+  background: rgba(48, 37, 69, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  border-radius: 5px;
+  opacity: 0.8;
+  font-weight: var(--font-bold);
+  padding: 2.5em;
+  display: flex;
+  flex-direction: column;
+  transition: 1.5s;
+}
+
+.blog-item:hover .card-body {
+  right: 0;
+}
+
+.card-title {
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.card-sub-title {
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: var(--font-light);
+}
+
+.card-info {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.card-btn {
+  color: white;
+  background: grey;
+  border: 0;
+  padding: 0.7em;
+  border-radius: 5px;
+  font-weight: var(--font-bold);
+  margin-top: 5px;
+}
+
+.card-btn:hover {
+  background: darkgray;
+}
+
+.thin {
+  width: 70%;
+}
+.thick {
+  width: 70%;
+}
+
+img {
+  width: 100%;
+}
+
+.footer {
+  background: var(--clr-dark-purple);
+  width: 100%;
+  height: 50px;
+}
+
+@media screen and (max-width: 1000px) {
+  .hero {
+    flex-direction: column;
+  }
+  .header {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+  }
+  .floating-island {
+    width: 100%;
+  }
+
+  .blogs {
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5em;
+  }
+}
+
+.blog-item:hover {
+  background: white;
+}
+
+img {
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 850px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+  .card-body {
+    padding: 10px;
+  }
+  .card-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hero h1 {
+    font-size: 4rem;
+  }
+  .blogs-row {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .navbar {
+    padding: 10px;
+  }
+  .hero h1 {
+    font-size: 3rem;
+  }
+  .hero {
+    padding: 2em;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .card-body {
+    justify-content: space-around;
+  }
+  .card-info {
+    display: none;
+  }
+}
+.card-btn a {
+  text-decoration: none;
+  color: white;
+}
